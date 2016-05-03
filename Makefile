@@ -1,4 +1,3 @@
-SUBMODULES := controller kll
 SIDES := left right
 CONTROLLER := $(PWD)/controller
 KLLS := $(wildcard *.kll)
@@ -7,9 +6,9 @@ KLLS := $(wildcard *.kll)
 LAYOUT := MDErgoIME
 LCD := lcdFuncMapIME
 
-all: $(SUBMODULES) $(SIDES)
+all: submodules $(SIDES)
 
-$(SUBMODULES):
+submodules:
 	git submodule init $@
 	git submodule update $@
 
